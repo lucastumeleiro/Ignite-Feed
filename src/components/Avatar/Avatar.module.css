@@ -1,0 +1,27 @@
+.avatarWithBorder {
+	box-sizing: initial;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 8px;
+	border: 4px solid var(--gray-800);
+	outline: 2px solid var(--green-500);
+
+	transition: transform 0.5s ease;
+}
+
+.avatarWithBorder:hover {
+	transform: scale(120%);
+}
+
+.avatar {
+	box-sizing: initial;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 8px;
+
+	transition: transform 0.5s ease;
+}
+
+.avatar:hover {
+	transform: scale(120%);
+}
