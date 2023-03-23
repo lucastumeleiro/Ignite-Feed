@@ -51,7 +51,7 @@
 }
 
 .commentContent header button:active {
-	transform: translate(0.1rem, 0.1rem);
+	transform: translate(0.05rem, 0.05rem);
 }
 
 .commentContent p {
@@ -81,7 +81,7 @@
 }
 
 .commentBox footer button:active {
-	transform: translate(0.1rem, 0.1rem);
+	transform: translate(0.05rem, 0.05rem);
 }
 
 .commentBox footer button svg {

@@ -12,7 +12,7 @@ function Sidebar() {
 			/>
 
 			<div className={styles.profile}>
-				<Avatar avatar={'https://github.com/lucastumeleiro.png'} />
+				<Avatar src={'https://github.com/lucastumeleiro.png'} />
 				<strong>Lucas Tumeleiro</strong>
 				<span>Fullstack Developer</span>
 			</div>

@@ -32,6 +32,7 @@ function App() {
 							<Post
 								key={post.id}
 								author={post.author}
+								id={post.id}
 								content={post.content}
 								publishedAt={post.publishedAt}
 							/>

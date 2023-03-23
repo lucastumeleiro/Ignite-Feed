@@ -1,14 +1,14 @@
-import { toast } from 'react-toastify';
+import { toast, ToastOptions } from 'react-toastify';
 
-const ToastType = {
-	INFO: 'INFO',
-	SUCCESS: 'SUCCESS',
-	WARNING: 'WARNING',
-	ERROR: 'ERROR',
-};
+enum ToastType {
+	INFO = 'INFO',
+	SUCCESS = 'SUCCESS',
+	WARNING = 'WARNING',
+	ERROR = 'ERROR',
+}
 
-function Toast(message, type) {
-	const config = {
+function Toast(message: string, type: ToastType) {
+	const config: ToastOptions = {
 		position: 'top-right',
 		autoClose: 5000,
 		hideProgressBar: false,
@@ -20,19 +20,19 @@ function Toast(message, type) {
 	};
 
 	switch (type) {
-		case 'INFO': {
+		case ToastType.INFO: {
 			toast.info(message, config);
 			break;
 		}
-		case 'SUCCESS': {
+		case ToastType.SUCCESS: {
 			toast.success(message, config);
 			break;
 		}
-		case 'WARNING': {
+		case ToastType.WARNING: {
 			toast.warning(message, config);
 			break;
 		}
-		case 'ERROR': {
+		case ToastType.ERROR: {
 			toast.error(message, config);
 			break;
 		}

@@ -5,9 +5,9 @@ import ptBR from 'date-fns/locale/pt-BR';
 import styles from './Post.module.css';
 
 import { Avatar } from '../Avatar';
-import { Comments } from './Comments';
+import { Comments, CommentsPost } from './Comments';
 
-const posts = [
+const posts: PostProps[] = [
 	{
 		id: 1,
 		author: {
@@ -50,9 +50,29 @@ const posts = [
 	},
 ];
 
-function Post(props) {
-	const { author, content, publishedAt } = props;
-	const [comments, setComments] = useState([]);
+interface Author {
+	name: string;
+	role: string;
+	avatarUrl: string;
+}
+
+interface Post {}
+
+interface PostContent {
+	type: 'paragraph' | 'link';
+	content: string;
+}
+
+interface PostProps {
+	id: number;
+	author: Author;
+	publishedAt: Date;
+	content: PostContent[];
+}
+
+function Post(props: PostProps) {
+	const { id, author, content, publishedAt } = props;
+	const [comments, setComments] = useState<CommentsPost[]>([]);
 
 	const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm", { locale: ptBR });
 	const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, { locale: ptBR, addSuffix: true });
@@ -61,7 +81,7 @@ function Post(props) {
 		<article className={styles.post}>
 			<header className={styles.postHeader}>
 				<div className={styles.author}>
-					<Avatar avatar={author.avatarUrl} />
+					<Avatar src={author.avatarUrl} />
 					<div className={styles.authorInfo}>
 						<strong>{author.name}</strong>
 						<span>{author.role}</span>
@@ -87,7 +107,7 @@ function Post(props) {
 				})}
 			</div>
 
-			<Comments comments={comments} setComments={setComments} />
+			<Comments comments={comments} setComments={setComments} postId={id} />
 		</article>
 	);
 }
