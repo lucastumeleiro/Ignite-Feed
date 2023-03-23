@@ -55,7 +55,7 @@ $ yarn start
 ## Deploy
 
 <p align="center"> Para visualização e teste da aplicação, foi realizado o deploy utilizado Vercel</p>
-<p>Link para acessa-lo: <a href="link">link</a></p>
+<p>Link para acessa-lo: <a href="https://ignite-feed-rust-mu.vercel.app/">https://ignite-feed-rust-mu.vercel.app/</a></p>
 
 <br/>
 <br/>
